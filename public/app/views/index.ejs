@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body ng-app="calendarApp" ng-controller="CalendarController">
+<body ng-app="calendarApp" ng-controller="CalendarController as calendar">
+    <div>{{calendar.title}}</div>
+    <!-- View different for Day, Month, Year -->
+    <a ui-sref="month" role="button" class="btn btn-primary btn-large">Month</a>
+    <a href="day" role="button" class="btn btn-primary btn-large">Day</a>
+    <a href="year" role="button" class="btn btn-primary btn-large">Year</a>
+
+
+
+
+
+
+
+
+
     <script src="angular/angular.js"></script>
+    <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
+    <script src="config.js"></script>
 </body>
 </html>
