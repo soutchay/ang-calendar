@@ -7,19 +7,26 @@ module.exports = function(grunt){
 			}
 		},
 		sass: {
-
+            dist: {
+                files: {
+                    'public/assets/css/main.css': 'public/assets/css/main.scss'
+                }
+            }
 		},
         ngAnnotate: {
 
         },
         watch: {
-
+          css: {
+            files: '**/*.scss',
+            tasks: ['sass']
+            }
         }
 	});
     //Load tasks
     grunt.loadNpmTasks('grunt-nodemon');
-    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-ng-annotate');
-    grunt.loadNpmTasks('grunt-watch');
-    grunt.registerTask('default', ['nodemon']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['sass', 'watch']);
 };
