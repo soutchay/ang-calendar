@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="calendarApp">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body ng-app="calendarApp" ng-controller="CalendarController as calendar">
+<body ng-controller="CalendarController as calendar">
     <div>{{calendar.title}}</div>
-    <div>{{calendar.day}}</div>
     <!-- View different for Day, Month, Year -->
     <a ui-sref="month" role="button" class="btn btn-primary btn-large">Month</a>
     <a ui-sref="day" role="button" class="btn btn-primary btn-large">Day</a>
