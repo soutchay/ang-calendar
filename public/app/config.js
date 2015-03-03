@@ -10,10 +10,10 @@ angular.module("calendarApp")
         })
         .state('day', {
             url: "/day",
-            templateUrl: ""
+            templateUrl: "app/views/templates/day.ejs"
         })
         .state('year', {
             url: "/year",
-            templateUrl: ""
+            templateUrl: "app/views/templates/year.ejs"
         });
 }]);

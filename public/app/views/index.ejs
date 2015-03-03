@@ -9,9 +9,10 @@
     <div>{{calendar.title}}</div>
     <!-- View different for Day, Month, Year -->
     <a ui-sref="month" role="button" class="btn btn-primary btn-large">Month</a>
-    <a href="day" role="button" class="btn btn-primary btn-large">Day</a>
-    <a href="year" role="button" class="btn btn-primary btn-large">Year</a>
-
+    <a ui-sref="day" role="button" class="btn btn-primary btn-large">Day</a>
+    <a ui-sref="year" class="btn btn-primary btn-large">Year</a>
+    
+    <div ui-view></div>
 
 
 
