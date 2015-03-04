@@ -22,7 +22,6 @@ app.directive("month", function(){
                 $scope.dayShown = false;
             };
             $scope.updateDay = function(event){
-                console.log('being passed in?', event);
                 $scope.daySelected.events.push(
                     { name: event.name,
                     description: event.description,
@@ -77,8 +76,10 @@ app.directive("month", function(){
         var monthIndex = date.month();
         var count = 0;
         while(!done){
+            //Create weeks
             scope.weeks.push({ days: createWeek(date.clone(), month) });
             date.add(1, "w");
+            //Add weeks until end of month
             done = count++ > 2 && monthIndex !== date.month();
             monthIndex = date.month();
         }
