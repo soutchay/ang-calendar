@@ -1,6 +1,6 @@
 <div class="month">
 <div class="left" ng-click="previous()"><</div>
-{{month.format("MMMM, YYYY")}}
+{{month.format("MMMM YYYY")}}
 <div class="right" ng-click="next()">></div>
 </div>
 <div class="week names">
@@ -8,6 +8,7 @@
 </div>
 <div class="week" ng-repeat="week in weeks">
     <div class="day number" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay(day)">{{day.number}}
+        <!-- <div class="event-list" ng-repeat="event in day.events">{{event.name}}</div> -->
     </div>
 </div>
 
@@ -22,11 +23,13 @@
             End Time: <input type="text" ng-model="event.end"/>
             <input type="submit" ng-click="updateDay(event)" value="Add Event" />            
         </form>
-        <div ng-repeat="event in daySelected.events track by $index">
-            Event Name: {{event.name}}
-            Event Description: {{event.description}}
-            Start Time: {{event.start}}
-            End Time: {{event.end}}
-        </div> 
+        <div class="list-events">
+            <div ng-repeat="event in daySelected.events track by $index">
+                Event Name: {{event.name}} <br/>
+                Event Description: {{event.description}}<br/>
+                Start Time: {{event.start}}<br/>
+                End Time: {{event.end}}<br/>
+            </div>
+        </div>
     </div>
 </div>

@@ -22,10 +22,13 @@ app.directive("month", function(){
                 $scope.dayShown = false;
             };
             $scope.updateDay = function(event){
-                console.log($scope.daySelected.events, 'empty events?');
                 console.log('being passed in?', event);
-                $scope.daySelected.events.push(event);
-                console.log($scope.daySelected);
+                $scope.daySelected.events.push(
+                    { name: event.name,
+                    description: event.description,
+                    start: event.start,
+                    end: event.end
+                    });
             };
         },
         controllerAs: "month",
@@ -93,7 +96,7 @@ app.directive("month", function(){
                 isCurrentMonth: date.month() === month.month(),
                 isToday: date.isSame(new Date(), "day"),
                 date: date,
-                events: [{}]
+                events: []
             });
             date = date.clone();
             date.add(1, "d");
