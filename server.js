@@ -9,7 +9,7 @@ app.set('views', path.join(__dirname, 'public/app/views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
-app.use(express.static(__dirname + '/public/app'));
+app.use(express.static(__dirname + '/public/'));
 
 //Set Up Routes
 router.route('/')
