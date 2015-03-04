@@ -62,10 +62,7 @@ html, body {
   border-left: 2px solid black;
   text-align: right;
   overflow: scroll;
-  border-bottom: 2px solid black;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  border-bottom: 2px solid black; }
   .day:last-child {
     border-right: 2px solid black; }
 
@@ -125,12 +122,13 @@ html, body {
   padding: 10px;
   width: 45%;
   height: 20em;
-  top: 30%;
+  top: 50%;
   left: 50%;
   background-color: white;
   border-radius: 5px;
   box-sizing: border-box;
   overflow-y: scroll;
+  font-size: 25px;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -147,6 +145,20 @@ html, body {
   left: 0;
   padding-bottom: 2px; }
 
+label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+  font-size: 16px; }
+
+.list-item {
+  font-size: 15px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black; }
+  .list-item:last-child {
+    border-bottom: 2px solid black; }
+
 @media (max-width: 420px) {
   .month {
     padding-top: 15px;
@@ -161,6 +173,12 @@ html, body {
     width: 20px; }
 
   .week {
-    height: 100%; } }
+    height: 35px; }
+
+  .event-list {
+    height: 100%; }
+
+  .day-info {
+    width: 70%; } }
 
 /*# sourceMappingURL=main.css.map */

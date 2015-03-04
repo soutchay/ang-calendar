@@ -17,14 +17,14 @@
     <div class="day-info">
         <strong>{{daySelected.date.format("MMMM DD, YYYY")}}</strong>
         <form>
-            Event Name: <input type="text" ng-model="event.name"/><br />
-            Event Description: <input type="text" ng-model="event.description"/><br/>
-            Start Time: <input type="text" ng-model="event.start"/><br />
-            End Time: <input type="text" ng-model="event.end"/>
+            <label> Event Name:</label> <input type="text" ng-model="event.name"/><br />
+            <label> Event Description:</label> <input type="text" ng-model="event.description"/><br/>
+            <label> Start Time:</label> <input type="text" ng-model="event.start"/><br />
+            <label> End Time:</label> <input type="text" ng-model="event.end"/> <br/>
             <input type="submit" ng-click="updateDay(event)" value="Add Event" />            
         </form>
         <div class="list-events">
-            <div ng-repeat="event in daySelected.events track by $index">
+            <div class="list-item" ng-repeat="event in daySelected.events track by $index">
                 Event Name: {{event.name}} <br/>
                 Event Description: {{event.description}}<br/>
                 Start Time: {{event.start}}<br/>
