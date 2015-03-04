@@ -14,6 +14,19 @@
 <div ng-show="dayShown" class="day-modal">
     <div class="day-modal-overlay" ng-click="hideDay()"></div>
     <div class="day-info">
-        {{daySelected.date.format("MMMM DD, YYYY")}}
+        <strong>{{daySelected.date.format("MMMM DD, YYYY")}}</strong>
+        <form>
+            Event Name: <input type="text" ng-model="event.name"/><br />
+            Event Description: <input type="text" ng-model="event.description"/><br/>
+            Start Time: <input type="text" ng-model="event.start"/><br />
+            End Time: <input type="text" ng-model="event.end"/>
+            <input type="submit" ng-click="updateDay(event)" value="Add Event" />            
+        </form>
+        <div ng-repeat="event in daySelected.events track by $index">
+            Event Name: {{event.name}}
+            Event Description: {{event.description}}
+            Start Time: {{event.start}}
+            End Time: {{event.end}}
+        </div> 
     </div>
 </div>

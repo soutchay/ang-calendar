@@ -1,8 +1,6 @@
 var app = angular.module("calendarApp", ['ui.router']);
 app.controller("CalendarController", function($scope){
-    this.title = "Calendar";
     this.day = moment();
-    console.log("basic angular setup");
 });
 app.directive("month", function(){
     return {
@@ -14,14 +12,20 @@ app.directive("month", function(){
         },
         templateUrl: 'app/views/templates/monthDirective.ejs',
         controller: function($scope){
-            $scope.daySelected = "something";
+            $scope.hourOptions = [];
+            $scope.daySelected = [];
             $scope.showDay = function(selection){
-                console.log('turn true', selection);
                 $scope.dayShown = true;
                 $scope.daySelected = selection;
             };
             $scope.hideDay = function(){
                 $scope.dayShown = false;
+            };
+            $scope.updateDay = function(event){
+                console.log($scope.daySelected.events, 'empty events?');
+                console.log('being passed in?', event);
+                $scope.daySelected.events.push(event);
+                console.log($scope.daySelected);
             };
         },
         controllerAs: "month",
@@ -38,8 +42,6 @@ app.directive("month", function(){
             removeTime(start);
 
             createMonth(scope, start, scope.month);
-            console.log(scope.weeks, "weeks");
-            console.log(scope.weeks[0].days, "days");
             scope.select = function(day){
                 scope.selected = day.date;
             };
@@ -112,8 +114,6 @@ app.directive("day", function(){
         replace: true,
         transclude: true,
         link: function(scope, element, attrs, monthCtrl){
-            console.log('day directive');
-            console.log(monthCtrl.test);
             //Toggle view of a selected day
             scope.hideDay = function(){
                 scope.shown = false;
