@@ -14,7 +14,7 @@ app.directive("month", function(){
         },
         template:
         '<div class="week" ng-repeat="week in weeks">' +
-            '<div class="day number" ng-repeat="day in week.days">{{day.number}}</div>' +
+            '<div class="day number" ng-class="{\'different-month\': !day.isCurrentMonth}" ng-repeat="day in week.days">{{day.number}}</div>' +
         '</div>',
         link: function(scope){
             //Get current time
