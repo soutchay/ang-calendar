@@ -5,7 +5,7 @@ angular.module("calendarApp")
     //Separate states for Month,Day, Year
     $stateProvider
         .state('month', {
-            url: "/month",
+            url: "/",
             templateUrl: "app/views/templates/month.ejs",
             controller: function(){
                 
