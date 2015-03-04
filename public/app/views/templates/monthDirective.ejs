@@ -7,5 +7,13 @@
     <div class="day weekday" ng-repeat="day in days">{{day}}</div>
 </div>
 <div class="week" ng-repeat="week in weeks">
-    <div class="day number" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay()">{{day.number}}</div>
+    <div class="day number" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay(day)">{{day.number}}
+    </div>
+</div>
+
+<div ng-show="dayShown" class="day-modal">
+    <div class="day-modal-overlay" ng-click="hideDay()"></div>
+    <div class="day-info">
+        {{daySelected.date.format("MMMM DD, YYYY")}}
+    </div>
 </div>

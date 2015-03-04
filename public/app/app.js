@@ -14,11 +14,15 @@ app.directive("month", function(){
         },
         templateUrl: 'app/views/templates/monthDirective.ejs',
         controller: function($scope){
-            $scope.showDay = function(){
-                console.log('turn true');
+            $scope.daySelected = "something";
+            $scope.showDay = function(selection){
+                console.log('turn true', selection);
                 $scope.dayShown = true;
+                $scope.daySelected = selection;
             };
-            this.test = "testing";
+            $scope.hideDay = function(){
+                $scope.dayShown = false;
+            };
         },
         controllerAs: "month",
         link: function(scope){
@@ -30,7 +34,7 @@ app.directive("month", function(){
             //the beginning of the month, keeps current time
             var start = scope.selectDay.clone();
             start.date(1);
-            //remove the current time to get the real start of the month at 00:00
+            //remove the current time to get the start of the month at 00:00
             removeTime(start);
 
             createMonth(scope, start, scope.month);
@@ -104,7 +108,7 @@ app.directive("day", function(){
         scope: {
             shown: '='
         },
-        require: "month",
+        require: "^month",
         replace: true,
         transclude: true,
         link: function(scope, element, attrs, monthCtrl){
