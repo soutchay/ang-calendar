@@ -106,23 +106,3 @@ app.directive("month", function(){
     }
 
 });
-//Directive to show day selected
-app.directive("day", function(){
-    return {
-        restrict: "E",
-        scope: {
-            shown: '='
-        },
-        require: "^month",
-        replace: true,
-        transclude: true,
-        link: function(scope, element, attrs, monthCtrl){
-            //Toggle view of a selected day
-            scope.hideDay = function(){
-                scope.shown = false;
-                console.log(monthCtrl.showDay);
-            };
-        },
-        templateUrl: "app/views/templates/dayDirective.ejs"
-    };
-});
