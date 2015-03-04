@@ -12,11 +12,17 @@ app.directive("month", function(){
         scope: {
             selected: '='
         },
-        template:
-        '<div class="week" ng-repeat="week in weeks">' +
-            '<div class="day number" ng-class="{\'different-month\': !day.isCurrentMonth, \'today\': day.isToday}" ng-repeat="day in week.days">{{day.number}}</div>' +
-        '</div>',
+        templateUrl: 'app/views/templates/monthDirective.ejs',
+        controller: function($scope){
+            $scope.showDay = function(){
+                console.log('turn true');
+                $scope.dayShown = true;
+            };
+            this.test = "testing";
+        },
+        controllerAs: "month",
         link: function(scope){
+            scope.days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
             //Get current time
             scope.selectDay = removeTime(scope.selectDay || moment());
             //Set up for month as well, don't want a pointer to object so we create a new object with same values
@@ -84,15 +90,18 @@ app.directive("day", function(){
         scope: {
             shown: '='
         },
+        require: "month",
         replace: true,
         transclude: true,
-        link: function(scope, element, attrs){
-            console.log('day view');
+        link: function(scope, element, attrs, monthCtrl){
+            console.log('day directive');
+            console.log(monthCtrl.test);
             //Toggle view of a selected day
             scope.hideDay = function(){
                 scope.shown = false;
+                console.log(monthCtrl.showDay);
             };
         },
-        templateUrl: "app/views/templates/day.ejs"
+        templateUrl: "app/views/templates/dayDirective.ejs"
     };
 });

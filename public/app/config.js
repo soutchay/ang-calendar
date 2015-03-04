@@ -8,7 +8,7 @@ angular.module("calendarApp")
             url: "/month",
             templateUrl: "app/views/templates/month.ejs",
             controller: function(){
-                this.days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+                
             },
             controllerAs: "month"
         })

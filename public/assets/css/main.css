@@ -4,16 +4,25 @@ html, body {
   margin: 0;
   padding: 0; }
 
+.month {
+  margin-top: 20px;
+  text-align: center;
+  width: 70%;
+  margin-left: 15%;
+  box-sizing: border-box;
+  background-color: blue;
+  color: white;
+  height: 50px;
+  font-size: 2em;
+  border: 2px solid black; }
+
 .week {
   height: 100px;
   width: 100%;
-  text-align: center;
-  background: black; }
+  text-align: center; }
 
 .names {
-  margin-top: 10px;
   height: 20%;
-  background: blue;
   text-align: center; }
 
 .day {
