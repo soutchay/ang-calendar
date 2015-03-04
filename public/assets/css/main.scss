@@ -48,6 +48,9 @@ html, body {
     height: 100px;
     width: 100%;
     text-align: center;
+    &:first-child.day {
+        background:black;
+    }
 }
 .names {
     height: 20%;
@@ -64,6 +67,17 @@ html, body {
     border-bottom: 2px solid black;
     &:last-child {
         border-right: 2px solid black;
+    }
+}
+.weekday {
+    background: black;
+    color: white;
+    text-align: center;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    &:first-child {
+        border-left: none;
     }
 }
 .different-month {
