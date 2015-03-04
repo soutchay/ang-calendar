@@ -1,7 +1,11 @@
-<div class="month">{{month.format("MMMM, YYYY")}}</div>
+<div class="month">
+<div class="left"><</div>
+{{month.format("MMMM, YYYY")}}
+<div class="right">></div>
+</div>
 <div class="week names">
     <div class="day" ng-repeat="day in days">{{day}}</div>
 </div>
 <div class="week" ng-repeat="week in weeks">
-    <div class="day number" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay()">{{day.number}}</div>
+    <div class="day" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay()">{{day.number}}</div>
 </div>
