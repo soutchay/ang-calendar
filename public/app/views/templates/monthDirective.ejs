@@ -8,7 +8,7 @@
 </div>
 <div class="week" ng-repeat="week in weeks">
     <div class="day number" ng-class="{'different-month': !day.isCurrentMonth, 'today': day.isToday}" ng-repeat="day in week.days" ng-click="showDay(day)">{{day.number}}
-        <!-- <div class="event-list" ng-repeat="event in day.events">{{event.name}}</div> -->
+        <div class="event-list" ng-repeat="event in day.events">{{event.name}} {{event.start}}</div>
     </div>
 </div>
 

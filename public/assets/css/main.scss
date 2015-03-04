@@ -95,7 +95,11 @@ html, body {
     background: red;
     border-left: 2px solid black;
     text-align: right;
+    overflow: scroll;
     border-bottom: 2px solid black;
+        box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     &:last-child {
         border-right: 2px solid black;
     }
@@ -152,8 +156,11 @@ html, body {
     @include box-shadow(4px 4px 80px #000);
 }
 .event-list {
-    position: absolute;
-    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    top: 0;
+    left: 0;
+    padding-bottom: 2px;
 }
 
 @media (max-width: 420px){
