@@ -4,13 +4,15 @@ html, body {
   margin: 0;
   padding: 0; }
 
+.toggle-state {
+  margin-top: 20px;
+  text-align: center; }
+
 .month {
   margin-top: 20px;
-  padding-top: 2px;
   text-align: center;
   width: 70%;
   margin-left: 15%;
-  box-sizing: border-box;
   background-color: blue;
   color: white;
   height: 50px;

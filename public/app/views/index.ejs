@@ -9,19 +9,12 @@
 <body ng-controller="CalendarController as calendar">
     <div>{{calendar.title}}</div>
     <!-- View different for Day, Month, Year -->
-    <a ui-sref="month" role="button" class="btn btn-primary btn-large">Month</a>
-    <a ui-sref="day" role="button" class="btn btn-primary btn-large">Day</a>
-    <a ui-sref="year" class="btn btn-primary btn-large">Year</a>
-    
+    <div class="toggle-state">
+        <a ui-sref="month" role="button" class="btn btn-primary btn-large">Month</a>
+        <a ui-sref="day" role="button" class="btn btn-primary btn-large">Day</a>
+        <a ui-sref="year" class="btn btn-primary btn-large">Year</a>
+    </div>
     <div ui-view></div>
-
-
-
-
-
-
-
-
     <script src="angular/angular.js"></script>
     <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="moment/moment.js"></script>
