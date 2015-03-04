@@ -1,3 +1,9 @@
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
 html, body {
     height: 100%;
     width: 100%;
@@ -6,6 +12,7 @@ html, body {
 }
 .month {
     margin-top: 20px;
+    padding-top: 2px;
     text-align: center;
     width: 70%;
     margin-left: 15%;
@@ -18,13 +25,25 @@ html, body {
     display: inline-block;
 }
 .left {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: black;
     margin-right: 10%;
     display: inline-block;
 }
 .right {
+    @extend .left;
+    margin-right: 0;
     display: inline-block;
     margin-left: 10%;
+    @include transition(all .5s ease-out);
 }
+.left:hover, .right:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    @include transition(all .5s ease-out);
+}
+
 .week {
     height: 100px;
     width: 100%;
@@ -46,13 +65,31 @@ html, body {
     &:last-child {
         border-right: 2px solid black;
     }
-    &:hover {
-       background-color: rgba(255,0,0, 0.7); 
-    }
 }
 .different-month {
     background: rgba(255,255,255, 0.8);
 }
 .today {
     background: rgba(255,100,100, 1);
+}
+.number:hover {
+    background-color: rgba(255,0,0, 0.7);
+}
+
+@media (max-width: 420px){
+    .month {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+    .left {
+        height: 20px;
+        width: 20px;
+    }
+    .right {
+        height: 20px;
+        width: 20px;
+    }
+    .week {
+        height: 100%;
+    }
 }

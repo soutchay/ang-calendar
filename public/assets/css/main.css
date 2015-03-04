@@ -6,6 +6,7 @@ html, body {
 
 .month {
   margin-top: 20px;
+  padding-top: 2px;
   text-align: center;
   width: 70%;
   margin-left: 15%;
@@ -17,13 +18,29 @@ html, body {
   border: 2px solid black;
   display: inline-block; }
 
-.left {
+.left, .right {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: black;
   margin-right: 10%;
   display: inline-block; }
 
 .right {
+  margin-right: 0;
   display: inline-block;
-  margin-left: 10%; }
+  margin-left: 10%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
+
+.left:hover, .right:hover, .right:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
 
 .week {
   height: 100px;
@@ -45,13 +62,30 @@ html, body {
   border-bottom: 2px solid black; }
   .day:last-child {
     border-right: 2px solid black; }
-  .day:hover {
-    background-color: rgba(255, 0, 0, 0.7); }
 
 .different-month {
   background: rgba(255, 255, 255, 0.8); }
 
 .today {
   background: #ff6464; }
+
+.number:hover {
+  background-color: rgba(255, 0, 0, 0.7); }
+
+@media (max-width: 420px) {
+  .month {
+    padding-top: 15px;
+    font-size: 15px; }
+
+  .left, .right {
+    height: 20px;
+    width: 20px; }
+
+  .right {
+    height: 20px;
+    width: 20px; }
+
+  .week {
+    height: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

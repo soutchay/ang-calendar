@@ -39,6 +39,20 @@ app.directive("month", function(){
             scope.select = function(day){
                 scope.selected = day.date;
             };
+            //Function to get next month
+            scope.next = function(){
+                var next = scope.month.clone();
+                removeTime((next.month(next.month()+1)).date(1));
+                scope.month.month(scope.month.month()+1);
+                createMonth(scope, next, scope.month);
+            };
+            //Functin to get previous month
+            scope.previous = function(){
+                var previous = scope.month.clone();
+                removeTime((previous.month(previous.month()-1)).date(1));
+                scope.month.month(scope.month.month()-1);
+                createMonth(scope, previous, scope.month);
+            };
         }
     };
     //Function to get the start of the day/month at 00:00
